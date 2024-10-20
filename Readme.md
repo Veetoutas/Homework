@@ -1,6 +1,6 @@
-## Vytautas Matulevičius Automation task
+# Vytautas Matulevičius Automation task
 
-# Steps to get the project running:
+## Steps to get the project running:
 1. Install latest [Node.js ](https://nodejs.org/)
 2. Clone the repo: "**git clone https://github.com/Veetoutas/Homework.git**"
 3. Navigate to project directory
