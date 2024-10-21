@@ -16,6 +16,7 @@ describe('Muffin shop', () => {
   it('should complete the full shopping and checkout process', () => {
     cy.navigateToShopFromHome();
     cy.sortByPriceHighToLow();
+    cy.assertSortingDescending("product-list-section-item-price")
     cy.addFirstItemToBasket();
     cy.proceedToCheckout();
     cy.fillShippingDetails(customerInfo);

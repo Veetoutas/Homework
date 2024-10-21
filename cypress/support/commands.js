@@ -20,6 +20,8 @@ Cypress.Commands.add('navigateToShopFromHome', () => {
 
 Cypress.Commands.add('sortByPriceHighToLow', () => {
     cy.getById("sorting-options").select("Price (high to low)");
+    cy.wait(1000);
+    cy.getByData("product-list-section-item-price").should('be.visible');
 });
 
 Cypress.Commands.add('addFirstItemToBasket', () => {
@@ -51,3 +53,11 @@ Cypress.Commands.add('clickButtonByData', (dataAttribute) => {
     cy.getByData(dataAttribute).click();
 });
   
+Cypress.Commands.add('assertSortingDescending', (dataAttribute) => {
+    cy.getByData(dataAttribute).then(($prices) => {
+        const prices = Cypress._.map($prices, (el) =>
+          parseFloat(el.innerText.replace(/[^0-9.]/g, ''))
+        );
+        expect(prices).to.deep.equal([...prices].sort((a, b) => b - a));
+      });
+});
