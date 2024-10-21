@@ -6,7 +6,7 @@
 3. Navigate to the project directory in the terminal
 4. Install the dependecies: "**npm install**"
 5. Install Cypress: **npm install cypress --save-dev**
-6. Open Cypres Test Runner with terminal command: "**npx cypress open**" (or you can run test in "Headless" mode by runnging command in the terminal: "**npx cypress run**" and skip further steps).
+6. Open Cypress Test Runner with terminal command: "**npx cypress open**" (or you can run test in "Headless" mode by running command in the terminal: "**npx cypress run**" and skip the remaining steps).
 7. Click "E2E Testing"
 8. Choose "Chrome" and click "**Start E2E Testing in Chrome**"
 9. Click on the "**home.cy.js**" file
