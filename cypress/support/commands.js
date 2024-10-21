@@ -36,7 +36,7 @@ Cypress.Commands.add('fillShippingDetails', (customerInfo) => {
     cy.getByClass("v-list-item-title").contains(customerInfo.country).click();
     cy.getByInput('placeholder="Choose address').type(customerInfo.street);
     cy.getByClass("v-list-item-title").contains('Studentų g. 19').click();
-    cy.getByData('checkout-shippingoptions-parcelselect').contains(customerInfo.selfServiceParcelAddress);
+    cy.getByData('checkout-shippingoptions-parcelselect').should('have.text', customerInfo.selfServiceParcelAddress);
     cy.clickButtonByData("checkout-shippingdetails-continue");
 });
 
